@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "tipo": "principal",
+        "categoria": "minuta",
+        "nombre": "Milanesa con papas fritas",
+        "precio": 1800,
+        "descripcion": "Milanesa de carne con papas fritas"
+    },
+    {
+        "id": 2,
+        "tipo": "principal",
+        "categoria": "minuta",
+        "nombre": "Milanesa con pure",
+        "precio": 1600,
+        "descripcion": "Milanesa de carne con pure"
+    },
+    {
+        "id": 3,
+        "tipo": "principal",
+        "categoria": "minuta",
+        "nombre": "Hamburguesa con papas fritas",
+        "precio": 1500,
+        "descripcion": "Hamburguesa con papas fritas"
+    },
+    {
+        "id": 4,
+        "tipo": "principal",
+        "categoria": "pasta",
+        "nombre": "Fetuccini a la bolognesa",
+        "precio": 1300,
+        "descripcion": "Fetuccini con salsa de tomate y carne"
+    },
+    {
+        "id": 5,
+        "tipo": "principal",
+        "categoria": "pasta",
+        "nombre": "Fetuccini al pesto",
+        "precio": 1400,
+        "descripcion": "Fetuccini con salsa pesto"
+    },
+    {
+        "id": 6,
+        "tipo": "postre",
+        "categoria": "helado",
+        "nombre": "2 bochas de helado",
+        "precio": 600,
+        "descripcion": "2 bochas de helado de los siguientes sabores: dulce de leche, chocolate, vainilla, frutilla, menta granizada"
+    },
+    {
+        "id": 7,
+        "tipo": "postre",
+        "categoria": "torta",
+        "nombre": "Tiramisú",
+        "precio": 700,
+        "descripcion": "Porción de tiramisú"
+    },
+    {
+        "id": 8,
+        "tipo": "bebida",
+        "categoria": "gaseosa",
+        "nombre": "Coca-Cola",
+        "precio": 300,
+        "descripcion": "Coca-Cola 500ml"
+    },
+    {
+        "id": 9,
+        "tipo": "bebida",
+        "categoria": "gaseosa",
+        "nombre": "Sprite",
+        "precio": 300,
+        "descripcion": "Sprite 500ml"
+    },
+    {
+        "id": 10,
+        "tipo": "bebida",
+        "categoria": "agua",
+        "nombre": "Agua mineral sin gas",
+        "precio": 200,
+        "descripcion": "Agua mineral sin gas 500ml"
+    }
+]

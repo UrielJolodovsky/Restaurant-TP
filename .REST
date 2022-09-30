@@ -1,4 +1,17 @@
-GET http://localhost:3000/ HTTP/1.1
+GET http://localhost:3000/menu HTTP/1.1
 
 ###
 
+GET http://localhost:3000/menu/4 HTTP/1.1
+
+###
+
+GET http://localhost:3000/principales HTTP/1.1
+
+###
+
+GET http://localhost:3000/postre HTTP/1.1
+
+###
+
+GET http://localhost:3000/bebidas HTTP/1.1
