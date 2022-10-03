@@ -10,7 +10,7 @@ GET http://localhost:3000/principales HTTP/1.1
 
 ###
 
-GET http://localhost:3000/postre HTTP/1.1
+GET http://localhost:3000/postres HTTP/1.1
 
 ###
 
