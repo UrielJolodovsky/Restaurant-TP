@@ -40,7 +40,7 @@ app.post('/pedido', (req, res) => {
     const pedido = req.body.productos;
     let precio_total = 0;
     pedido.forEach(element => {
-        precio_total += menu.precio.filter((menu) => menu.id === id) * productos.cantidad;
+        precio_total += menu.precio.find((menu) => menu.id === element.id) * element.cantidad;
     });
 
     res.json({"msj": "Pedido recibido", "precio":  precio_total});
