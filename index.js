@@ -1,9 +1,24 @@
 const express = require("express");
+const mysql = require("mysql2");
 const menu = require('./menu.json');
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database:"test",
+})
+
+connection.connect((err) => {
+    if (err) 
+        console.log(err)
+    else 
+        console.log("> Connected to database");
+})
 
 // Ejercicio 1
 app.get('/menu', (req, res) => {
@@ -46,10 +61,41 @@ app.post('/pedido', (req, res) => {
     res.json({"msj": "Pedido recibido", "precio":  precio_total});
 }) 
 
-// Server running
-app.listen(port, () => {
-    console.log(`Aquí está corriendo el servidor ${port}`)
+app.get('/users', (req, res) => {
+    connection.query("SELECT * FROM users", (err, rows, fields) => {
+        if (err)
+            console.log(err);
+        
+        res.json(rows);
+    })
 })
 
+app.post('/login', (req, res) => {
+    if (!req.body.username || req.body.password)
+        return res.status(400).send("Faltan datos");
+    
+    const username = req.body.username;
+    const password = req.body.password;
 
+    connection.query("SELECT * FROM users WHERE username = " + username, (err,rows) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send("Error al loguearse");
+        }
+        if (!rows.length)
+            return res.send("Wrong username");
+        if (rows[0].password === password)
+            res.send("Logged succesfully");
+        else
+            res.send("Wrong password");
+    });
+});
+
+
+// Server running
+app.listen(port, () => {
+    console.log(`> Aquí está corriendo el servidor ${port}`);
+});
+
+// npm i mysql2
 
