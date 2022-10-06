@@ -40,3 +40,25 @@ Content-Type: application/json
 GET http://localhost:3000/users HTTP/1.1
 
 ###
+
+// Ejercicio 1 DB
+GET http://localhost:3000/menu HTTP/1.1
+
+###
+
+// Ejercicio 2 DB
+GET http://localhost:3000/menu/9 HTTP/1.1
+
+###
+
+// Ejercicio 3 DB
+
+GET http://localhost:3000/principales HTTP/1.1
+
+###
+// Ejercicio 4 DB
+GET http://localhost:3000/postres HTTP/1.1
+
+###
+// Ejercicio 5 DB
+GET http://localhost:3000/bebidas HTTP/1.1
