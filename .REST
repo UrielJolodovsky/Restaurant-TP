@@ -31,6 +31,10 @@ Content-Type: application/json
         {
             "id": 2,
             "cantidad": 1
+        },
+        {
+            "id": 3,
+            "cantidad": 4
         }
     ]
 }

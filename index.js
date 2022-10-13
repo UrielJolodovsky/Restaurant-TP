@@ -135,13 +135,16 @@ app.get('/bebidas', (req, res) => {
 
 // Ejercicio 6 DB
 app.post('/pedido', (req, res) => {
-    const pedido = req.params.productos;
-    const pedidosid = req.params.productos.id;
-    const pedidocantidades = req.params.productos.cantidad;
-    connection.query(`SELECT precio FROM plato WHERE id IN (${
-            Array.from({ length: pedidosid.length }, (_, i) => i < pedidosid.length - 1 ? '?,' : '?')
-        })`, [...pedidosid], (err, rows) => {
-            if (!rows.length) return res.send("Pedido incorrecto")
+    const pedido = req.body.productos;
+    const pedidosid = pedido.map((elemento) => elemento.id);
+    const pedidocantidades = pedido.map ((elemento) => elemento.cantidad);
+    const q = `SELECT precio FROM plato WHERE id IN (${
+        Array.from({ length: pedidosid.length }, (_, i) => i < pedidosid.length - 1 ? '?' : '?')
+    })`;
+    console.log(q);
+    connection.query(q, [...pedidosid], (err, rows) => {
+            if(err) return res.send(err);
+            if (!rows) return res.send("Pedido incorrecto")
             else {
                 let precio_total = 0;
                 for (let i = 0; i < rows.length; i++)
@@ -149,7 +152,7 @@ app.post('/pedido', (req, res) => {
                     precio_total += rows[i].precio * pedidocantidades[i];
                 }
                 res.json({"msj": "Pedido recibido", "precio":  precio_total});
-            }
+           }
         })
 })
 
